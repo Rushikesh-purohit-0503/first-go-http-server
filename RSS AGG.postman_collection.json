@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "fef25a12-664d-4613-849a-688a23cb3d45",
+		"name": "RSS AGG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40772961"
+	},
+	"item": [
+		{
+			"name": "getUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 0d6c8c279b8c33321ea3d47d2d792a2adcc1fef8233bbbff9c3daa65d4c22b10",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"name\": \"Abby\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createFeeds",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 0d6c8c279b8c33321ea3d47d2d792a2adcc1fef8233bbbff9c3daa65d4c22b10",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Abby's blog\",\r\n    \"url\": \"http://www.huffingtonpost.com/feeds/verticals/world/index.xml\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/v1/feeds",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"feeds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFeeds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/v1/feeds",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"feeds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Billy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createFeedFollows",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 4692a733efeed903a3260b7e5d0e19932d36c78ccca2897af57263bfbc587633",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"feed_id\": \"a05dbf23-d049-4d0a-b36c-2b3555681308\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/v1/feed_follows",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"feed_follows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFeedFollows",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 4692a733efeed903a3260b7e5d0e19932d36c78ccca2897af57263bfbc587633",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/v1/feed_follows",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"feed_follows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 4692a733efeed903a3260b7e5d0e19932d36c78ccca2897af57263bfbc587633",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/v1/feed_follows/a43bb43d-7b72-4ee0-bbf9-1c70e75e56f5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"feed_follows",
+						"a43bb43d-7b72-4ee0-bbf9-1c70e75e56f5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey 4692a733efeed903a3260b7e5d0e19932d36c78ccca2897af57263bfbc587633",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/v1/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
